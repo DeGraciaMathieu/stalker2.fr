@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('api')->namespace('api')->group(function () {
+	Route::prefix('papers')->group(function () {
+		Route::post('all', 'PapersController@all')->name('api.papers.all');
+		Route::post('{id}', 'PapersController@show')->name('api.papers.show');
+	});
 });
