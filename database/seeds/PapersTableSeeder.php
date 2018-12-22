@@ -11,6 +11,8 @@ class PapersTableSeeder extends Seeder
      */
     public function run()
     {
-	    factory(App\Models\Paper::class, 10)->create();
+        factory(\App\User::class)->create();
+        factory(\App\Models\Category::class, 3)->create();
+        factory(\App\Models\Paper::class, 10)->create();
     }
 }

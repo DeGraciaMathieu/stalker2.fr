@@ -10,8 +10,6 @@ class PaperPresenter implements Presenter {
      */
     public function render(array $item)
     {
-        return [
-            'id' => $item['id'],
-        ];
+        return $item;
     }
 }

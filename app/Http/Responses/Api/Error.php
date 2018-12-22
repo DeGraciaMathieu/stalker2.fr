@@ -1,22 +1,21 @@
 <?php
 
-namespace App\Http\Responses;
+namespace App\Http\Responses\Api;
 
 use Datetime;
 use Response;
 use App\Http\Presenters\Presenter;
 use Illuminate\Contracts\Support\Responsable;
 
-class Api implements Responsable {
+class Error implements Responsable {
 
     /**
      * @param \App\Http\Presenters\Presenter $presenter
      * @param array $items
      */
-    public function __construct(Presenter $presenter, $items)
+    public function __construct()
     {
-        $this->presenter = $presenter;
-        $this->items = $items;
+
     }
 
     /**
@@ -36,8 +35,6 @@ class Api implements Responsable {
      */
     protected function present()
     {
-        return array_map(function($item) {
-            return $this->presenter->render($item);
-        }, $this->items);
+        return 1;
     }
 }

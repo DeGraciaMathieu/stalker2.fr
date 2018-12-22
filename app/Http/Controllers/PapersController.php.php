@@ -8,7 +8,6 @@ use App\Repositories\Criterias;
 use App\Http\Controllers\Controller;
 use App\Repositories\PaperRepository;
 use App\Http\Presenters\PaperPresenter;
-use App\Http\Requests\ShowPaperRequest;
 
 class PapersController extends Controller
 {
@@ -39,7 +38,7 @@ class PapersController extends Controller
     /**
      * @return \App\Http\Responses\Api
      */
-    public function show(ShowPaperRequest $request)
+    public function show(Request $request)
     {
         $this->repository->pushCriteria(new Criterias\Online());
         $this->repository->pushCriteria(new Criterias\With('category'));

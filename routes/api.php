@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 Route::middleware('api')->namespace('api')->group(function () {
 	Route::prefix('papers')->group(function () {
-		Route::post('all', 'PapersController@all')->name('api.papers.all');
-		Route::post('{id}', 'PapersController@show')->name('api.papers.show');
+		Route::get('/', 'PapersController@index')->name('api.papers.index');
+		Route::get('{id}', 'PapersController@show')->name('api.papers.show');
 	});
 });
